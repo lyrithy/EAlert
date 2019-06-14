@@ -1,0 +1,103 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+<div class="container">
+    <h2 class="text-center">Emergency </h2>
+	<div class="row justify-content-center">
+		<div class="col-12 col-md-8 col-lg-6 pb-5">
+
+
+                    <!--Form with header-->
+
+                    <form action="/reqemg" method="post" onsubmit="return confirm('Do you really want to submit the emergency?');">
+                        <div class="card border-primary rounded-0">
+                            <div class="card-header p-0">
+                                <div class="bg-info text-white text-center py-2">
+                                    <h3><i class="fa fa-envelope"></i> Brno Emergency</h3>
+                                    <p class="m-0">Contact to emergency by providing your current locaiton</p>
+                                </div>
+                            </div>
+                            <div class="card-body p-3">
+
+                                <!--Body-->
+                                <div class="form-group">
+                                    <div class="input-group mb-2">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text"><i class="fa fa-user text-info"></i></div>
+                                        </div>
+                                        <input type="text" class="form-control" onclick="getLocation()" id="name" name="name" placeholder="Your's name" >
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group mb-2">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text"><i class="fa fa-phone text-info"></i></div>
+                                        </div>
+                                        <input type="text" class="form-control" id="phone" name="phone" placeholder="Your's phone" >
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="input-group mb-2">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text"><i class="fa fa-envelope text-info"></i></div>
+                                        </div>
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="your@gmail.com" >
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="input-group mb-2">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text"><i class="fa fa-comment text-info"></i></div>
+                                        </div>
+                                        <textarea class="form-control" id="summary" name="summary" placeholder="Report problem happen?" ></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="form">
+                                    <input type="hidden" name="latitude" id="latitude" value="">
+                                    <input type="hidden" name="longitude" id="longitude" value="">
+                                </div>
+                                
+                                <div class="text-center">
+                                    <button onclick="getLocation()" class="btn btn-warning btn-block rounded-0 py-2" type="submit" value="emgReport" name = "btnReport">Report Problems</button>
+                                    <button onclick="getLocation()" class="btn btn-danger btn-block rounded-0 py-2" type="submit" value="emgEU" name = "btnReport">Emergency(Universal European), Tel: 112</button>
+                                    <button onclick="getLocation()" class="btn btn-danger btn-block rounded-0 py-2" type="submit" value="emgPolice" name = "btnReport">Police(City) Tel: 156</button>
+                                    <button onclick="getLocation()" class="btn btn-danger btn-block rounded-0 py-2" type="submit" value="emgAmbulance" name = "btnReport">Ambulance Tel: 155</button>
+                                    <button onclick="getLocation()" class="btn btn-danger btn-block rounded-0 py-2" type="submit" value="emgfire" name = "btnReport">Fire, Tel: 150</button>                                    
+                                </div>
+                            </div>
+
+                        </div>
+                    </form>
+                    <!--Form with header-->
+
+                </div>
+	</div>
+</div>
+<script>
+  window.onload = function() {
+    getLocation();
+  };
+
+    var latitude = document.getElementById("latitude");
+    var longitude = document.getElementById("longitude");
+    function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+      } else { 
+        console.log("Geolocation is not supported by this browser.");        
+      }
+    }
+    
+    function showPosition(position) {
+        latitude.value =  position.coords.latitude;
+        longitude.value = position.coords.longitude;
+        console.log("position.coords.latitude : " + position.coords.latitude);
+        console.log("position.coords.longitude : " + position.coords.longitude);
+    }
+    </script>
+

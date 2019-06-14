@@ -1,0 +1,121 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+
+
+<div class="container">
+<br><p class="text-center">Emergency List</p>
+<hr>
+
+<div class="row">
+	<aside class="col-sm-4">
+
+
+            <div class="card">
+                    <article class="card-group-item">
+                        <header class="card-header"><h6 class="title">Emergency(Universal European) </h6></header>
+                        <div class="filter-content">
+                            <div class="list-group list-group-flush">
+                              <a href="#" class="list-group-item">Cras justo odio <span class="float-right badge badge-light round">142</span> </a>
+                              <a href="#" class="list-group-item">Dapibus ac facilisis  <span class="float-right badge badge-light round">3</span>  </a>			  
+                            </div>  <!-- list-group .// -->
+                        </div>
+                    </article> <!-- card-group-item.// -->	
+                </div> <!-- card.// -->
+
+
+
+
+    </aside> <!-- col1.// -->    
+	<aside class="col-sm-4">
+
+
+
+<div class="card">
+	<article class="card-group-item">
+		<header class="card-header"><h6 class="title">Police(City) </h6></header>
+		<div class="filter-content">
+			<div class="list-group list-group-flush">
+			  <a href="#" class="list-group-item">Cras justo odio <span class="float-right badge badge-light round">142</span> </a>
+			  <a href="#" class="list-group-item">Dapibus ac facilisis  <span class="float-right badge badge-light round">3</span>  </a>			  
+			</div>  <!-- list-group .// -->
+		</div>
+	</article> <!-- card-group-item.// -->	
+</div> <!-- card.// -->
+
+
+
+	</aside> <!-- col2.// -->
+	<aside class="col-sm-4">
+
+            <div class="card">
+                    <article class="card-group-item">
+                        <header class="card-header"><h6 class="title">Ambulance </h6></header>
+                        <div class="filter-content">
+                            <div class="list-group list-group-flush">
+                              <a href="#" class="list-group-item">Cras justo odio <span class="float-right badge badge-light round">142</span> </a>
+                              <a href="#" class="list-group-item">Dapibus ac facilisis  <span class="float-right badge badge-light round">3</span>  </a>			  
+                            </div>  <!-- list-group .// -->
+                        </div>
+                    </article> <!-- card-group-item.// -->	
+                </div> <!-- card.// -->
+
+
+    </aside> <!-- col.// -->
+    
+    
+</div> <!-- row.// -->
+<br>
+<div class="row">
+        <aside class="col-sm-8">
+              
+
+                <div class="card">
+                        <article class="card-group-item">
+                            <header class="card-header"><h6 class="title">Report Problems </h6></header>
+                            <div class="filter-content">
+                                <div class="list-group list-group-flush">
+                                <% for (var i in emgReport) { %>
+                                    <!-- http://www.google.com/maps/place/49.46800006494457,17.11514008755796 -->
+                                  <a href="http://www.google.com/maps/place/<%= emgReport[i].latitude %>,<%= emgReport[i].longitude %>" class="list-group-item"><%= emgReport[i].request_name %> 
+                                    <span class="float-right badge badge-light round"> Tel:<%= emgReport[i].phone %></span> 
+                                    <span class="float-right badge badge-light round">Email:<%= emgReport[i].email %></span>
+                                 </a>
+                                  		  
+                                  <% } %>
+                                </div>  <!-- list-group .// -->
+                            </div>
+                        </article> <!-- card-group-item.// -->	
+                    </div> <!-- card.// -->
+    
+    
+    
+    
+        </aside> <!-- col1.// -->    
+        <aside class="col-sm-4">
+
+
+                <div class="card">
+                        <article class="card-group-item">
+                            <header class="card-header"><h6 class="title">Fire </h6></header>
+                            <div class="filter-content">
+                                <div class="list-group list-group-flush">
+                                  <a href="#" class="list-group-item">Cras justo odio <span class="float-right badge badge-light round">142</span> </a>
+                                  <a href="#" class="list-group-item">Dapibus ac facilisis  <span class="float-right badge badge-light round">3</span>  </a>			  
+                                </div>  <!-- list-group .// -->
+                            </div>
+                        </article> <!-- card-group-item.// -->	
+                    </div> <!-- card.// -->
+    
+    
+    
+    
+        </aside> <!-- col1.// -->    
+
+</div>
+
+</div> 
+<!--container end.//-->
